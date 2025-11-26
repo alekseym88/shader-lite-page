@@ -31,7 +31,7 @@
     }
 
     .container {
-      max-width: 800px;
+      max-width: 850px;
       min-width: 300px;
       margin: 0 auto;
       padding: 60px 20px 100px;
@@ -127,8 +127,17 @@
 
     .pricing-grid {
       display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    }
+
+    @media (max-width: 640px) {
+
+    .pricing-grid {
+      display: grid;
       gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      grid-template-columns:  1fr;
+    }
     }
 
     .plan-card {
@@ -376,7 +385,7 @@
 <body>
   <div class="container">
 
-    <h2><strong>Free live preview for your selected shader node</strong><span class="pill-free">Free</span></h2>
+    <h2><strong>Live preview for your selected node</strong><span class="pill-free">Free</span></h2>
 
     <p>
       <strong>Shader Node Preview Lite</strong> is a simplified, free version of 
@@ -386,17 +395,13 @@
     </p>
 
     <p>
-      It uses the same rendering engine as Shader View, but with one key limitation:
+      It uses the same way as Shader View, but with one key limitation:
       <strong>only one node can be previewed at a time</strong>.
       Perfect if you want to try the workflow, learn shaders, or keep things super lightweight.
     </p>
 
-    <!-- TODO: replace # with actual Lite download URL -->
     <p>
-      Get the Lite version for free on Superhive or Gumroad:
-      <br>
-      <a href="#" target="_blank">Download Lite on Superhive</a> ·
-      <a href="#" target="_blank">Download Lite on Gumroad</a>
+      Get the Lite version on <a href="https://shadererror.gumroad.com/l/shader_view" target="_blank">Gumroad</a>:      
     </p>
 
     <img class="hero-gif" src="https://assets.superhivemarket.com/cache/f690ea070a330f67f4c2864e115bf3d9.gif" alt="Shader Node Preview Lite demonstration">
@@ -406,12 +411,10 @@
       <li><span class="material-check">check_box</span><strong>Single-node live preview</strong> — always see the output of the node you’re working on.</li>
       <li><span class="material-check">check_box</span><strong>Real-time updates</strong> — tweak values and instantly see the result on the material.</li>
       <li><span class="material-check">check_box</span><strong>Output Socket Selector</strong> — preview color, factor, normal and other sockets.</li>
-      <li><span class="material-check">check_box</span>Great for learning, testing setups, and keeping your graph clean.</li>
       <li><span class="material-check">check_box</span>Non-destructive — the add-on never touches your node tree or scene data.</li>
     </ul>
 
-    <!-- 3-BLOCK COMPARISON -->
-    <h3 class="pricing-title">Lite vs. Full Shader View</h3>
+    <h3 class="pricing-title">Lite vs. Full</h3>
     <p class="pricing-sub">
       Lite is perfect as a free starting point. If you need more control, power, and debugging tools,
       you can upgrade to the Standard or Pro version of Shader View at any time.
@@ -422,10 +425,10 @@
       <!-- Lite -->
       <div class="plan-card plan-lite">
         <h4 class="plan-name">Lite</h4>
-        <p class="plan-tagline">Try the workflow, for free</p>
+        <p class="plan-tagline">Try the add-on, for free</p>
 
-        <div class="plan-price free">$0<span> · forever</span></div>
-        <p class="plan-subline">Single-node, lightweight preview experience.</p>
+        <div class="plan-price free">Free<span></span></div>
+        <p class="plan-subline">Single-node, lightweight.</p>
 
         <ul class="plan-list">
           <li><span class="icon-check">✔️</span>Real-time preview update</li>
@@ -436,8 +439,6 @@
           <li><span class="icon-x">❌</span>Scalar grid / Min–Max analysis</li>
         </ul>
 
-        <!-- TODO: replace with actual Lite product URL -->
-        <a href="#" class="plan-cta">Download Lite</a>
       </div>
 
       <!-- Standard -->
@@ -455,6 +456,7 @@
           <li><span class="icon-check" style="color:#d6990a;">✔️</span>Performance controls (limited)</li>
           <li><span class="icon-check" style="color:#d6990a;">✔️</span>UDIM support (active tile)</li>
           <li><span class="icon-x">❌</span>Scalar grid, vector splitting, smart masking</li>
+          <li style="line-height: 1.3;font-size: 90%;"><span class="material-check" style="color: #333;">error</span>Includes all features available in the Node Preview Add-on</li>
         </ul>
 
         <a href="https://superhivemarket.com/products/shader-view" target="_blank" class="plan-cta">View Standard</a>
@@ -462,7 +464,7 @@
 
       <!-- Pro -->
       <div class="plan-card plan-pro">
-        <div class="plan-badge">Best for power users</div>
+        <div class="plan-badge">👑 Most Advanced</div>
 
         <h4 class="plan-name">Pro</h4>
         <p class="plan-tagline">Full control & deep debugging</p>
@@ -485,9 +487,6 @@
       </div>
     </div>
 
-    <p class="small-note">
-      You can start with Lite and upgrade later — your workflow and habits will transfer directly to the full version.
-    </p>
 
     <!-- SHORT FULL VERSION DESCRIPTION -->
     <h3><strong>What you get in the full Shader View</strong></h3>
@@ -510,27 +509,23 @@
     </p>
 
     <!-- PREVIEW-IT BLOCK -->
-    <div class="intro-gn">
-      <h3 style="margin-bottom: 12px;" class="gradient-text">
-        Wish this existed for Geometry Nodes? It does.
-      </h3>
+    <div class="intro-gn" 
+        style="margin-top: 60px; padding: 32px; border-radius: 24px; background: #000; color:#fff;">
 
-      <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Preview-it™</strong> brings the same idea to the Geometry Node editor:
-        real-time previews for geometry, fields, attribute flow, selection masks and more —
-        right inside your node tree. No constant jumping to the viewport, no dummy Viewers,
-        no spreadsheet digging.
-      </p>
+      <h2 style="margin-bottom: 12px;" class="gradient-text">Wish Shader View existed for Geometry Nodes? Now it does.</h2>
 
-      <p style="font-size: 0.98rem; opacity: 0.9; margin-bottom: 1.5rem;">
-        It’s a separate add-on, built specifically for Geometry Nodes. If you enjoy
-        Shader Node Preview Lite, you’ll feel right at home with Preview-it™ as well.
+      <p style="font-size: 1.15rem; line-height: 1.7; margin-bottom: 1.5rem;">
+        Meet Preview-it™ Add-on — real-time previews for everything inside your Geometry Tree:
+        geometry shapes, field values, attribute flow, selection masks, and more.
+        All without constantly checking the viewport, wiring temporary viewers, or digging through the spreadsheet
+
       </p>
 
       <a href="https://superhivemarket.com/products/preview-it" target="_blank"
-         class="cta-animated-btn">
-        🔥 Check out Preview-it™ for Geometry Nodes
+        class="cta-animated-btn">
+        🔥 Limited-Time Launch: <strong>60% OFF Early Access</strong>
       </a>
+
     </div>
 
     <!-- FAQ -->
@@ -561,14 +556,6 @@
             Shader View, which includes advanced performance controls and background processing.
           </p>
         </details>
-        <details>
-          <summary>Can I upgrade from Lite to the full version later?</summary>
-          <p>
-            Absolutely. Lite is designed so that the workflow feels familiar. When you move to the
-            Standard or Pro version of Shader View, you keep the same habits — just with more power,
-            more previews, and deeper debugging tools.
-          </p>
-        </details>
       </div>
     </section>
 
@@ -577,7 +564,7 @@
       Bugs, questions, or ideas? Reach me on
       <a href="https://x.com/ShaderError" target="_blank">X/Twitter</a> or join the
       <a href="https://discord.gg/VyUQ7Ru64B" target="_blank">Discord</a> for updates and
-      behind-the-scenes progress on Shader View, Preview-it™, and more.
+      behind-the-scenes progress and more.
     </p>
 
   </div>
