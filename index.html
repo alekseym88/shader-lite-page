@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shader Node Preview Lite — Free Single-Node Previews for Blender</title>
-  <meta name="description" content="Shader Node Preview Lite is a free, simplified version of Shader View Add-on. Get real-time shader node output preview for a single selected node.">
+  <title>Shader Node Preview Lite — $2 Single-Node Previews · 100% to Blender Dev Fund</title>
+  <meta name="description" content="Shader Node Preview Lite is a simplified version of Shader View Add-on. $2 — and 100% goes to the Blender Development Fund. Real-time shader node output preview for a single selected node.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,6 +103,58 @@
       margin-left: 8px;
     }
 
+    .pill-fund {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      background: #fff1e0;
+      color: #d46a00;
+      vertical-align: middle;
+      margin-left: 8px;
+      border: 1px solid #ffd9a8;
+    }
+
+    .fund-callout {
+      margin: 36px 0 12px;
+      padding: 24px 26px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff7ec 0%, #ffe9cf 100%);
+      border: 1px solid #ffd9a8;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: 0 8px 24px rgba(255, 140, 0, 0.10);
+    }
+
+    .fund-callout .fund-emoji {
+      font-size: 2.4rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .fund-callout .fund-text {
+      font-size: 1.02rem;
+      line-height: 1.5;
+      color: #3a2a10;
+      margin: 0;
+    }
+
+    .fund-callout .fund-text strong {
+      color: #b85700;
+    }
+
+    .fund-callout a {
+      color: #b85700;
+      font-weight: 600;
+    }
+
+    @media (max-width: 560px) {
+      .fund-callout { flex-direction: column; text-align: center; padding: 22px 20px; }
+    }
+
     @media (max-width: 680px) {
       .container { padding: 40px 15px; }
       h2 { font-size: 2.4rem; }
@@ -131,7 +183,7 @@
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 820px) {
 
     .pricing-grid {
       display: grid;
@@ -406,10 +458,10 @@
 <body>
   <div class="container">
 
-    <h2><strong>Live preview for your selected node</strong><span class="pill-free">Free</span></h2>
+    <h2><strong>Live preview for your selected node</strong><span class="pill-fund">🧡 $2 · 100% to Blender Fund</span></h2>
 
     <p>
-      <strong>Shader Node Preview Lite</strong> is a simplified, free version of 
+      <strong>Shader Node Preview Lite</strong> is a simplified, low-cost version of 
       <a href="https://superhivemarket.com/products/shader-view" target="_blank">Shader View</a>.
       It gives you a <strong>real-time preview</strong> of the currently selected shader node —
       so you can instantly see what a node is doing without constantly rewiring your material.
@@ -422,8 +474,19 @@
     </p>
 
     <p>
-      Get the Lite version on <a href="https://shadererror.gumroad.com/l/shader_view" target="_blank">Gumroad</a>:      
+      Get the Lite version on <a href="https://shadererror.gumroad.com/l/shader_view" target="_blank">Gumroad</a> for just <strong>$2</strong> — and 
+      <strong>100% of that goes directly to the <a href="https://fund.blender.org/" target="_blank">Blender Development Fund</a></strong>.
+      You're not paying me — you're supporting Blender. 🧡
     </p>
+
+    <div class="fund-callout">
+      <div class="fund-emoji">🧡</div>
+      <p class="fund-text">
+        <strong>100% of the $2 price is donated to the Blender Development Fund.</strong>
+        Every cent goes directly to <a href="https://fund.blender.org/" target="_blank">fund.blender.org</a> to support
+        core Blender development. I keep nothing — you get the add-on, Blender gets the support.
+      </p>
+    </div>
 
     <img class="hero-gif" src="https://assets.superhivemarket.com/cache/f690ea070a330f67f4c2864e115bf3d9.gif" alt="Shader Node Preview Lite demonstration">
 
@@ -437,19 +500,19 @@
 
     <h3 class="pricing-title">Lite vs. Full</h3>
     <p class="pricing-sub">
-      Lite is perfect as a free starting point. If you need more control, power, and debugging tools,
-      you can upgrade to the Standard or Pro version of Shader View at any time.
+      Lite is a great starting point — $2, with every cent donated to the Blender Development Fund.
+      If you need more control, power, and debugging tools, you can upgrade to the Standard or Pro version of Shader View at any time.
     </p>
 
     <div class="pricing-grid">
 
       <!-- Lite -->
       <div class="plan-card plan-lite">
-        <h4 class="plan-name">Lite</h4>
-        <p class="plan-tagline">Try the add-on, for free</p>
+        <h4 class="plan-name">Lite 🧡</h4>
+        <p class="plan-tagline">Try the add-on. Support Blender.</p>
 
-        <div class="plan-price free">Free<span></span></div>
-        <p class="plan-subline">Single-node, lightweight.</p>
+        <div class="plan-price free">$2<span> · one-time</span></div>
+        <p class="plan-subline">100% donated to the Blender Dev Fund.</p>
 
         <ul class="plan-list">
           <li><span class="icon-check">✔️</span>Real-time preview update</li>
@@ -459,6 +522,8 @@
           <li><span class="icon-x">❌</span>Performance controls</li>
           <li><span class="icon-x">❌</span>Scalar grid / Min–Max analysis</li>
         </ul>
+
+        <a href="https://shadererror.gumroad.com/l/shader_view" target="_blank" class="plan-cta">Get on Gumroad</a>
 
       </div>
 
@@ -580,6 +645,15 @@
       <h3 style="text-align: center;"><strong>FAQ</strong></h3>
 
       <div class="faq" style="margin: clamp(32px, 6vw, 50px) auto; max-width: 780px;">
+        <details>
+          <summary>Where does the $2 actually go?</summary>
+          <p>
+            <strong>100% to the <a href="https://fund.blender.org/" target="_blank">Blender Development Fund</a>.</strong>
+            I don't keep a cent — the full $2 (minus what Gumroad takes for payment processing) is forwarded
+            directly to fund.blender.org to support core Blender development. If you'd rather donate to Blender
+            directly and grab the add-on after, that works too — just message me on Discord or X.
+          </p>
+        </details>
         <details>
           <summary>What Blender versions are supported?</summary>
           <p>
